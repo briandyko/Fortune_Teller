@@ -10,16 +10,17 @@ namespace Fortune_Teller
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("You are driving home from work after a busy, yet productive Friday. You are listening to some cool tunes, when all of a sudden the radio goes out. Then the engine turns off. You get out of your car and suddenly find yourself in a forest. You get out without much trouble, but approach a bridge. A troll comes from underneath and tells you this is his bridge, and the price to cross it is having your fortune read. Will you let him read your fortune?.");
-            string invitation = Console.ReadLine().ToLower();
+            Console.WriteLine("Congrats, you just made it out of the Forest of Horrors!!! You approach the \n bridge that leads back to Civilization, but alas, a troll comes and blocks \n your safe passage. The price you must pay is having your fortune told!");
+           
+            //string invitation = Console.ReadLine().ToLower();
 
             //string answerInvitation = "yes";
 
             //    if (invitation == answerInvitation)
-            {
+            
                 Console.WriteLine("What is your first name?");
-                string fname = Console.ReadLine().ToLower();
-            }
+                string fname = Console.ReadLine();
+         
 
             //else
             //{
@@ -28,7 +29,7 @@ namespace Fortune_Teller
 
 
             Console.WriteLine("What is your last name?");
-            string lname = Console.ReadLine().ToLower();
+            string lname = Console.ReadLine();
 
             Console.WriteLine("What is your age?");
             int age = int.Parse(Console.ReadLine());
@@ -56,39 +57,41 @@ namespace Fortune_Teller
 
             Console.WriteLine("Here is your fortune, mortal!");
             int retireAge = age % 2;
+            string workYearsLeft;
 
             if (retireAge == 0)
             {
-                Console.WriteLine("You will retire in 35 years.");
+                workYearsLeft = "35 years";
             }
             else
             {
-                Console.WriteLine("You will retire in 4 years.");
+                workYearsLeft = "4 years";
             }
 
+            string vacation;
             if (numSiblings == 0)
             {
-                Console.WriteLine("You will have a vacation home in Turks and Cacos, but mostly Cacos");
+                vacation = "the Bermuda Triangle";
             }
             else if (numSiblings == 1)
             {
-                Console.WriteLine("You will have a vacation home on Kelly's Island.");
+                vacation = "Kelly's Island.";
             }
             else if (numSiblings == 2)
             {
-                Console.WriteLine("You will have a vaction home on Jupiter");
+                vacation = "Jupiter's core";
             }
             else if (numSiblings == 3)
             {
-                Console.WriteLine("You will have a vacation home in Maui");
+                vacation = "Maui";
             }
             else if (numSiblings > 3)
             {
-                Console.WriteLine("You will have a vacation home in Phoenix");
+                vacation = "Phoenix";
             }
             else
                 {
-                Console.WriteLine("You will have a vacation in the eteranal fires of Hades!");
+                vacation = "the eteranal fires of Hades";
                 }
 
             // favorite color part
@@ -145,12 +148,11 @@ namespace Fortune_Teller
                 salary = 0;
             }
 
-             
+            // part 3 begins below!
 
-
-       
-
-
+            Console.WriteLine(fname + " " + lname + " will retire in " + workYearsLeft + " with " + "$"+salary + " in the bank, a vacation home \n in " + vacation + " and a " + transpo + ".");
+         
+     
         }
     }
 }
