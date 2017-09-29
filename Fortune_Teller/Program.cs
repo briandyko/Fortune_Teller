@@ -39,14 +39,14 @@ namespace Fortune_Teller
             Console.WriteLine("What is your favorite ROYGBIV color? If you do not know what ROYGBIV colors are, enter \"Help\".");
             string favColor = Console.ReadLine().ToLower();
 
-            int numSiblings;
-
             if (favColor == "help")
             {
                 Console.WriteLine("Red, Orange, Yellow, Green, Blue, Indigo, Violet");
                 Console.WriteLine("What is your favorite ROYGBIV color?");
                 string favColorPostHelp = Console.ReadLine().ToLower();
             }
+
+            int numSiblings;
 
             Console.WriteLine("What is the number of siblings that you have?");
             numSiblings = int.Parse(Console.ReadLine());
@@ -90,10 +90,62 @@ namespace Fortune_Teller
                 {
                 Console.WriteLine("You will have a vacation in the eteranal fires of Hades!");
                 }
-           
-            
 
-               
+            // favorite color part
+
+            string transpo = "";
+
+            if (favColor == "red")
+            {
+                transpo = "hovercraft";
+            }
+            else if (favColor == "orange")
+            {
+                transpo = "spaceship";
+            }
+            else if (favColor == "yellow")
+            {
+                transpo = "rickshaw";
+            }
+            else if (favColor == "green")
+            {
+                transpo = "dunebuggy";
+            }
+            else if (favColor == "blue")
+            {
+                transpo = "monster truck";
+            }
+            else if (favColor == "indigo")
+            {
+                transpo = "particle transporter";
+            }
+            else if (favColor == "violet")
+            {
+                transpo = "wheelbarrow";
+            }
+
+            //birth number section
+
+            int salary;
+
+            if (birthMonth >= 1 && birthMonth <= 4)
+            {
+                salary = 123123;
+            }
+            else if (birthMonth >= 5 && birthMonth <= 8)
+            {
+                salary = 678678;
+            }
+            else if (birthMonth >= 9 && birthMonth <= 12)
+            {
+                salary = 105;
+            }
+            else
+            {
+                salary = 0;
+            }
+
+             
 
 
        
