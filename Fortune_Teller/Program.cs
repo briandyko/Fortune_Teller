@@ -11,23 +11,10 @@ namespace Fortune_Teller
         static void Main(string[] args)
         {
             Console.WriteLine("Congrats, you just made it out of the Forest of Horrors!!! You approach the \n bridge that leads back to Civilization, but alas, a troll comes and blocks \n your safe passage. The price you must pay is having your fortune told!");
-           
-            //string invitation = Console.ReadLine().ToLower();
-
-            //string answerInvitation = "yes";
-
-            //    if (invitation == answerInvitation)
             
-                Console.WriteLine("What is your first name?");
-                string fname = Console.ReadLine();
-         
-
-            //else
-            //{
-            //    Console.WriteLine("you have made a very bad choice, my friend, the trolls says before he eats you. game over.");
-            //}
-
-
+            Console.WriteLine("What is your first name?");
+            string fname = Console.ReadLine();
+       
             Console.WriteLine("What is your last name?");
             string lname = Console.ReadLine();
 
@@ -37,7 +24,7 @@ namespace Fortune_Teller
             Console.WriteLine("What is the number of your birth month?");
             int birthMonth = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("What is your favorite ROYGBIV color? If you do not know what ROYGBIV colors are, enter \"Help\".");
+            Console.WriteLine("What is your favorite ROYGBIV color? If you do not know what ROYGBIV colors are, enter \"Help\" for a list of them.");
             string favColor = Console.ReadLine().ToLower();
 
             if (favColor == "help")
@@ -48,14 +35,16 @@ namespace Fortune_Teller
             }
 
             int numSiblings;
-
             Console.WriteLine("What is the number of siblings that you have?");
             numSiblings = int.Parse(Console.ReadLine());
 
-
-            //this is believe is the end of part 1, at least for now.
+            // this is the end of part 1.
 
             Console.WriteLine("Here is your fortune, mortal!");
+            // (to be displayed just before the fortune is read.)
+    
+            // age/# of years before retirement part
+
             int retireAge = age % 2;
             string workYearsLeft;
 
@@ -68,6 +57,8 @@ namespace Fortune_Teller
                 workYearsLeft = "4 years";
             }
 
+            // number of siblings/vacation home part
+
             string vacation;
             if (numSiblings == 0)
             {
@@ -75,7 +66,7 @@ namespace Fortune_Teller
             }
             else if (numSiblings == 1)
             {
-                vacation = "Kelly's Island.";
+                vacation = "Wichita, Kansas";
             }
             else if (numSiblings == 2)
             {
@@ -83,20 +74,20 @@ namespace Fortune_Teller
             }
             else if (numSiblings == 3)
             {
-                vacation = "Maui";
+                vacation = "the International Space Station";
             }
             else if (numSiblings > 3)
             {
-                vacation = "Phoenix";
+                vacation = "Middle Earth";
             }
             else
                 {
-                vacation = "the eteranal fires of Hades";
+                vacation = "the eternal fires of Hades";
                 }
 
-            // favorite color part
+            // favorite color/mode of transportation part
 
-            string transpo = "";
+            string transpo= "".ToLower();
 
             if (favColor == "red")
             {
@@ -126,8 +117,12 @@ namespace Fortune_Teller
             {
                 transpo = "wheelbarrow";
             }
+            else
+            {
+                transpo = "tricycle straight from The Shining";
+            }
 
-            //birth number section
+            // birth month number/amount of money in bank section
 
             int salary;
 
@@ -137,7 +132,7 @@ namespace Fortune_Teller
             }
             else if (birthMonth >= 5 && birthMonth <= 8)
             {
-                salary = 678678;
+                salary = 67867838;
             }
             else if (birthMonth >= 9 && birthMonth <= 12)
             {
@@ -150,9 +145,8 @@ namespace Fortune_Teller
 
             // part 3 begins below!
 
-            Console.WriteLine(fname + " " + lname + " will retire in " + workYearsLeft + " with " + "$"+salary + " in the bank, a vacation home \n in " + vacation + " and a " + transpo + ".");
+            Console.WriteLine(fname + " " + lname + " will retire in " + workYearsLeft + " with " + "$"+salary + " in the bank, a vacation \n home in " + vacation + " and a " + transpo + ".");
          
-     
         }
     }
 }
