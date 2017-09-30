@@ -10,37 +10,56 @@ namespace Fortune_Teller
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Congrats, you just made it out of the Forest of Horrors!!! You approach the \n bridge that leads back to Civilization, but alas, a troll comes and blocks \n your safe passage. The price you must pay is having your fortune told!");
+            Console.WriteLine("Congrats, you just made it out of the Forest of Horrors!!! You approach the \n bridge that leads back to Civilization, but alas, a boil-infested troll comes \n and blocks your safe passage. The price you must pay is having your fortune \n told!\n");
             
-            Console.WriteLine("What is your first name?");
+            Console.WriteLine("(The boils are making this troll weak, though, and if you would rather run away from this hideous monstrosity at any point, simply type \"quit\".)\n");
+
+            Console.WriteLine("He asks you through his rotten teeth,\"What is your first name?\"");
             string fname = Console.ReadLine();
-       
-            Console.WriteLine("What is your last name?");
+
+            if (fname.ToLower() == "quit")
+            {
+                Console.WriteLine("Nobody likes a quitter...");
+                return;
+            }
+
+            Console.WriteLine("The troll sneers at you as he asks, \"What is your last name?\"");
             string lname = Console.ReadLine();
 
-            Console.WriteLine("What is your age?");
+            if (lname.ToLower() == "quit")
+            {
+                Console.WriteLine("Nobody likes a quitter...");
+                return;
+            }
+
+            Console.WriteLine("\"Nice name,\" he begrudgingly admits, \"But what is your age?\"");
             int age = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("What is the number of your birth month?");
+            Console.WriteLine("\"Okay, okay...But the real question is what is the number of your birth month?\"");
             int birthMonth = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("What is your favorite ROYGBIV color? If you do not know what ROYGBIV colors are, enter \"Help\" for a list of them.");
+            Console.WriteLine("\"If you say so...Even more importantly, though, what is your favorite ROYGBIV \n color? And If you do not know what ROYGBIV colors are, enter \"Help\" for a list of them,\" he says ever so sinisterly.");
             string favColor = Console.ReadLine().ToLower();
 
             if (favColor == "help")
             {
                 Console.WriteLine("Red, Orange, Yellow, Green, Blue, Indigo, Violet");
-                Console.WriteLine("What is your favorite ROYGBIV color?");
+                Console.WriteLine("\"Now answer! What is your favorite ROYGBIV color?\"");
                 string favColorPostHelp = Console.ReadLine().ToLower();
+            }
+            else if (favColor.ToLower() == "quit")
+            {
+                Console.WriteLine("Nobody likes a quitter...");
+                return;
             }
 
             int numSiblings;
-            Console.WriteLine("What is the number of siblings that you have?");
+            Console.WriteLine("\"Finally, human, what is the number of siblings that you have?\"");
             numSiblings = int.Parse(Console.ReadLine());
 
             // this is the end of part 1.
 
-            Console.WriteLine("Here is your fortune, mortal!");
+            Console.WriteLine("\n\"Here is your fortune, puny mortal!\"\n");
             // (to be displayed just before the fortune is read.)
     
             // age/# of years before retirement part
@@ -87,7 +106,7 @@ namespace Fortune_Teller
 
             // favorite color/mode of transportation part
 
-            string transpo= "".ToLower();
+            string transpo="".ToLower();
 
             if (favColor == "red")
             {
