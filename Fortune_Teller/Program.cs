@@ -33,10 +33,22 @@ namespace Fortune_Teller
             }
 
             Console.WriteLine("\"Nice name,\" he begrudgingly admits, \"But what is your age?\"");
-            int age = int.Parse(Console.ReadLine());
+            string age = (Console.ReadLine());
+           
+            if (age.ToLower() == "quit")
+            {
+                Console.WriteLine("Nobody likes a quitter...");
+                return;
+            }
 
             Console.WriteLine("\"Okay, okay...But the real question is what is the number of your birth month?\"");
-            int birthMonth = int.Parse(Console.ReadLine());
+            string birthMonth = (Console.ReadLine());
+
+            if(birthMonth.ToLower() == "quit")
+            {
+                Console.WriteLine("Nobody likes a quitter...");
+                return;
+            }
 
             Console.WriteLine("\"If you say so...Even more importantly, though, what is your favorite ROYGBIV \n color? And If you do not know what ROYGBIV colors are, enter \"Help\" for a list of them,\" he says ever so sinisterly.");
             string favColor = Console.ReadLine().ToLower();
@@ -53,18 +65,25 @@ namespace Fortune_Teller
                 return;
             }
 
-            int numSiblings;
+            string numSiblings;
             Console.WriteLine("\"Finally, human, what is the number of siblings that you have?\"");
-            numSiblings = int.Parse(Console.ReadLine());
+            numSiblings = (Console.ReadLine());
+
+            if (numSiblings == "quit")
+            {
+                Console.WriteLine("Nobody likes a quitter...");
+                return;
+            }
 
             // this is the end of part 1.
 
             Console.WriteLine("\n\"Here is your fortune, puny mortal!\"\n");
             // (to be displayed just before the fortune is read.)
-    
+
             // age/# of years before retirement part
 
-            int retireAge = age % 2;
+            int testRetireAge = Convert.ToInt32(age);
+            int retireAge = testRetireAge % 2;
             string workYearsLeft;
 
             if (retireAge == 0)
@@ -78,24 +97,26 @@ namespace Fortune_Teller
 
             // number of siblings/vacation home part
 
+            int testNumSiblings = Convert.ToInt32(numSiblings);
             string vacation;
-            if (numSiblings == 0)
+
+            if (testNumSiblings == 0)
             {
                 vacation = "the Bermuda Triangle";
             }
-            else if (numSiblings == 1)
+            else if (testNumSiblings == 1)
             {
                 vacation = "Wichita, Kansas";
             }
-            else if (numSiblings == 2)
+            else if (testNumSiblings == 2)
             {
                 vacation = "Jupiter's core";
             }
-            else if (numSiblings == 3)
+            else if (testNumSiblings == 3)
             {
                 vacation = "the International Space Station";
             }
-            else if (numSiblings > 3)
+            else if (testNumSiblings > 3)
             {
                 vacation = "Middle Earth";
             }
@@ -143,17 +164,18 @@ namespace Fortune_Teller
 
             // birth month number/amount of money in bank section
 
+            int testBirthMonth = Convert.ToInt32(birthMonth);
             int salary;
 
-            if (birthMonth >= 1 && birthMonth <= 4)
+            if (testBirthMonth >= 1 && testBirthMonth <= 4)
             {
                 salary = 123123;
             }
-            else if (birthMonth >= 5 && birthMonth <= 8)
+            else if (testBirthMonth >= 5 && testBirthMonth <= 8)
             {
                 salary = 67867838;
             }
-            else if (birthMonth >= 9 && birthMonth <= 12)
+            else if (testBirthMonth >= 9 && testBirthMonth <= 12)
             {
                 salary = 105;
             }
